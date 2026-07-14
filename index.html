@@ -96,10 +96,8 @@ auth: {
 componentProps:{title:'营销诊断助手'}
 });
 }catch(e){
-let msg='聊天组件加载失败。';
-if(PAT_TOKEN==='pat_awEZk8fGBt9LdOqM7ngyuwaJGvaWjBR2yqmoMPSymdNvPsSOAaUERMGG7HFXZqjO'){msg+='\n\n请先填写PAT令牌！';}
-if(location.protocol==='file:'){msg+='\n\n请部署到服务器后再试。';}
-alert(msg);
+    let msg='聊天组件加载失败。\n错误详情：' + e.message;
+    alert(msg);
 }
 }
 function openChat(){initChat();if(cozeChat){cozeChat.showChatBot?cozeChat.showChatBot():(cozeChat.show&&cozeChat.show());}}
