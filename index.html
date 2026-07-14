@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>营销诊断助手</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:"Microsoft YaHei",sans-serif;color:#333;line-height:1.6}
+header{background:#fff;padding:16px 40px;border-bottom:1px solid #eee;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100}
+.logo{font-size:20px;font-weight:700}
+.logo span{color:#4a90d9}
+.nav-btn{background:#4a90d9;color:#fff;border:none;padding:8px 20px;border-radius:6px;font-size:14px;cursor:pointer;font-weight:600}
+.hero{background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);color:#fff;padding:80px 40px;text-align:center}
+.hero h1{font-size:36px;margin-bottom:16px}
+.hero p{font-size:18px;max-width:600px;margin:0 auto 32px;opacity:.95}
+.hero-btn{background:#fff;color:#667eea;border:none;padding:14px 40px;border-radius:30px;font-size:16px;cursor:pointer;font-weight:700}
+.section{padding:60px 40px;max-width:1000px;margin:0 auto}
+.section h2{text-align:center;font-size:28px;margin-bottom:40px}
+.steps{display:flex;gap:30px;flex-wrap:wrap;justify-content:center}
+.step{flex:1;min-width:200px;max-width:280px;text-align:center}
+.step-num{width:50px;height:50px;background:#667eea;color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:22px;font-weight:700;margin:0 auto 16px}
+.pricing{background:#f8f9fa;padding:60px 40px}
+.pricing h2{text-align:center;font-size:28px;margin-bottom:40px}
+.plans{display:flex;gap:30px;flex-wrap:wrap;justify-content:center;max-width:800px;margin:0 auto}
+.plan{background:#fff;border-radius:12px;padding:30px;width:300px;box-shadow:0 2px 12px rgba(0,0,0,.08);text-align:center}
+.plan.featured{border:2px solid #667eea}
+.plan .price{font-size:36px;font-weight:700;color:#667eea;margin:16px 0}
+.plan ul{list-style:none;text-align:left;margin:20px 0}
+.plan ul li{padding:6px 0;font-size:14px;color:#555}
+.plan ul li::before{content:"✓ ";color:#667eea;font-weight:700}
+.plan-btn{background:#667eea;color:#fff;border:none;padding:12px 30px;border-radius:8px;font-size:15px;cursor:pointer;font-weight:600;width:100%}
+.pay-notice{background:#fff3cd;border:1px solid #ffeaa7;border-radius:8px;padding:16px;margin:20px auto;max-width:600px;text-align:center;font-size:14px;color:#856404}
+footer{background:#1a1a1a;color:#999;padding:30px 40px;text-align:center;font-size:13px}
+</style>
+</head>
+<body>
+<header>
+<div class="logo">营销<span>诊断助手</span></div>
+<button class="nav-btn" onclick="openChat()">开始诊断</button>
+</header>
+<section class="hero">
+<h1>专业营销诊断，助力企业增长</h1>
+<p>二十年营销经验沉淀，为中小企业提供精准、可落地的营销诊断服务。输入你的营销困惑，3分钟获取专业诊断报告。</p>
+<button class="hero-btn" onclick="openChat()">立即开始诊断</button>
+</section>
+<section class="section">
+<h2>如何使用</h2>
+<div class="steps">
+<div class="step"><div class="step-num">1</div><h3>描述你的问题</h3><p>告诉我你的产品、行业和当前营销困惑</p></div>
+<div class="step"><div class="step-num">2</div><h3>获取诊断报告</h3><p>系统自动分析，生成结构化诊断报告</p></div>
+<div class="step"><div class="step-num">3</div><h3>执行优化方案</h3><p>按报告建议行动，持续跟踪效果</p></div>
+</div>
+</section>
+<section class="pricing">
+<h2>服务套餐</h2>
+<div class="plans">
+<div class="plan">
+<h3>基础诊断</h3>
+<div class="price">¥19.9<small>/次</small></div>
+<ul><li>企业营销问题诊断</li><li>核心问题分析（3个）</li><li>短期行动建议</li><li>3分钟快速出报告</li></ul>
+<button class="plan-btn" onclick="openChat()">选择基础诊断</button>
+</div>
+<div class="plan featured">
+<h3>深度诊断</h3>
+<div class="price">¥398<small>/次</small></div>
+<ul><li>全方位营销诊断分析</li><li>行业对标参考案例</li><li>短/中/长期策略建议</li><li>关键行动清单（8项）</li><li>专属顾问跟进</li></ul>
+<button class="plan-btn" onclick="openChat()">选择深度诊断</button>
+</div>
+</div>
+<div class="pay-notice">
+<strong>支付说明：</strong>当前为试运行阶段，请在诊断完成后通过页面下方收款码完成支付。<br>
+支付完成后将您的支付截图发送至客服，获取完整诊断报告。
+</div>
+</section>
+<footer>
+<p>营销诊断助手 © 2026 | 专注中小企业营销诊断服务</p>
+<p style="margin-top:8px;">技术支持：Coze AI 智能体平台</p>
+</footer>
+<script src="https://lf-cdn.coze.cn/obj/unpkg/flow-platform/chat-app-sdk/latest/libs/cn/index.js"></script>
+<script>
+const PAT_TOKEN = 'pat_awEZk8fGBt9LdOqM7ngyuwaJGvaWjBR2yqmoMPSymdNvPsSOAaUERMGG7HFXZqjO';
+const BOT_ID = '7657831982852292651';
+let cozeChat = null;
+function initChat(){
+if(cozeChat){cozeChat.showChatBot?cozeChat.showChatBot():cozeChat.show();return;}
+try{
+if(typeof CozeWebSDK==='undefined'){throw new Error('SDK未加载');}
+cozeChat=new CozeWebSDK.WebChatClient({
+config:{bot_id:BOT_ID},
+auth:{type:'token',token:PAT_TOKEN,onRefreshToken:()=>PAT_TOKEN},
+componentProps:{title:'营销诊断助手'}
+});
+}catch(e){
+let msg='聊天组件加载失败。';
+if(PAT_TOKEN==='pat_awEZk8fGBt9LdOqM7ngyuwaJGvaWjBR2yqmoMPSymdNvPsSOAaUERMGG7HFXZqjO'){msg+='\n\n请先填写PAT令牌！';}
+if(location.protocol==='file:'){msg+='\n\n请部署到服务器后再试。';}
+alert(msg);
+}
+}
+function openChat(){initChat();if(cozeChat){cozeChat.showChatBot?cozeChat.showChatBot():(cozeChat.show&&cozeChat.show());}}
+window.addEventListener('load',function(){setTimeout(initChat,800);});
+</script>
+</body>
+</html>
