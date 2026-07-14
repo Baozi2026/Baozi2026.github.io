@@ -88,7 +88,11 @@ try{
 if(typeof CozeWebSDK==='undefined'){throw new Error('SDK未加载');}
 cozeChat=new CozeWebSDK.WebChatClient({
 config:{bot_id:BOT_ID},
-auth:{type:'token',token:PAT_TOKEN,onRefreshToken:()=>PAT_TOKEN},
+auth: {
+    type: 'token',
+    token: PAT_TOKEN,
+    onRefreshToken: async () => PAT_TOKEN
+}
 componentProps:{title:'营销诊断助手'}
 });
 }catch(e){
